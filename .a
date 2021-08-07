@@ -1,0 +1,22 @@
+PHOME=/Users/nivaniuk
+PGNL=$PHOME/home/projects/get_next_line
+PMAIN=$PGNL/main.c
+PDTMP=$PGNL/tmp
+PEXE=$PDTMP/prog
+PTXT=$PDTMP/text.txt
+DFILE=-Dtfile=\"$PTXT\"
+
+function al(){
+	nano /Users/nivaniuk/.a && source /Users/nivaniuk/.a
+}
+function g(){
+	gcc -Wall -Werror -Wextra -DBUFFER_SIZE=42 -Ddebug=1 $DFILE $PMAIN -o $PEXE && $PEXE && rm -rf $PEXE
+}
+
+function gc(){
+	gcc -Wall -Werror -Wextra -DBUFFER_SIZE=42 -Ddebug=0 $PMAIN -o $PEXE && $PEXE $$ rm -rf $PEXE
+}
+alias e="nano $PMAIN"
+alias et="nano $PTXT"
+alias c="clear"
+echo $PMAIN
