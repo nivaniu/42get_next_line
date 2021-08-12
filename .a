@@ -15,7 +15,7 @@ function g(){
 }
 
 function gc(){
-	gcc -Wall -Werror -Wextra -DBUFFER_SIZE=42 -Ddebug=0 $PMAIN -o $PEXE && $PEXE $$ rm -rf $PEXE
+	gcc -Wall -Werror -Wextra -DBUFFER_SIZE=42 -Ddebug=0 $DFILE $PMAIN -o $PEXE && $PEXE $$ rm -rf $PEXE
 }
 alias e="nano $PMAIN"
 alias et="nano $PTXT"
