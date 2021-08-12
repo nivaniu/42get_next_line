@@ -5,9 +5,10 @@ PDTMP=$PGNL/tmp
 PEXE=$PDTMP/prog
 PTXT=$PDTMP/text.txt
 DFILE=-Dtfile=\"$PTXT\"
+AFILE=$PGNL/.a
 
 function al(){
-	nano /Users/nivaniuk/.a && source /Users/nivaniuk/.a
+	nano $AFILE && source $AFILE
 }
 function g(){
 	gcc -Wall -Werror -Wextra -DBUFFER_SIZE=42 -Ddebug=1 $DFILE $PMAIN -o $PEXE && $PEXE && rm -rf $PEXE
